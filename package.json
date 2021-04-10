@@ -1,0 +1,10 @@
+{
+  "name": "gqltest",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "back": "cd back && yarn run start",
+    "front": "cd front && yarn run start"
+  }
+}
