@@ -1,0 +1,38 @@
+query GET_MESSAGES($cursor: ID = "", $limit: Int) {
+  messages(cursor: $cursor, limit: $limit) {
+    id
+    text
+    user {
+      id
+      nickname
+    }
+    timestamp
+  }
+}
+
+mutation CREATE_MESSAGE($text: String!, $userId: ID!) {
+  createMessage(text: $text, userId: $userId) {
+    id
+    text
+    user {
+      id
+      nickname
+    }
+    timestamp
+  }
+}
+
+mutation DELETE_MESSAGE($id: ID!, $userId: ID!) {
+  deleteMessage(id: $id, userId: $userId)
+}
+
+mutation UPDATE_MESSAGE($id: ID!, $text: String!, $userId: ID!) {
+  updateMessage(id: $id, text: $text, userId: $userId) {
+    id
+    text
+    user {
+      id
+    }
+    timestamp
+  }
+}
